@@ -21,7 +21,6 @@ btn.addEventListener('click', () => {
 
   const isHeads = Math.random() < 0.5
   const result = isHeads ? 'Heads' : 'Tails'
-  resultEl.textContent = result
 
 	// add multiple spins for realism
   const spins = 4 * 360
@@ -33,6 +32,7 @@ btn.addEventListener('click', () => {
   inner.style.transform = `rotateY(${currentRotation}deg)`
 
   const onEnd = () => {
+    resultEl.textContent = result
     isFlipping = false
     inner.removeEventListener('transitionend', onEnd)
   }
